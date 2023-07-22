@@ -10,10 +10,10 @@ const Header = () => {
   const hero = require("../../assets/heroSection.png");
 
   return (
-    <div className="relative h-full w-full ">
+    <div className="h-full w-full m-0 p-0">
       <div
         style={{ backgroundImage: `url(${hero})` }}
-        className="bg-center absolute h-[650px] w-full"
+        className="bg-center h-[650px] w-full"
       >
         <Container>
           <div className="md:flex hidden justify-between items-center">
