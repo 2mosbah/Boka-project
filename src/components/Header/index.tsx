@@ -12,7 +12,11 @@ const Header = () => {
   return (
     <div className="h-full w-full m-0 p-0">
       <div
-        style={{ backgroundImage: `url(${hero})` }}
+        style={{
+          backgroundImage: `url(${hero})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
         className="bg-center h-[650px] w-full"
       >
         <Container>

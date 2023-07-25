@@ -7,6 +7,7 @@ import { Body, H1 } from "../../../Typography";
 import { FiCalendar, FiClock, FiSearch } from "react-icons/fi";
 import { HiLocationMarker } from "react-icons/hi";
 import { SlLocationPin } from "react-icons/sl";
+import { Link } from "react-router-dom";
 
 const HeaderForm = () => {
   return (
@@ -97,7 +98,9 @@ const HeaderForm = () => {
             type="button"
             label={<SlLocationPin />}
           />
-          <span className="text-[#FF914D]">Get current location</span>
+          <Link to={"#"} className="text-[#FF914D]">
+            Get current location
+          </Link>
         </div>
       </div>
     </>

@@ -8,6 +8,7 @@ const Button = (props: ButtonProps) => {
       className={`text-sm font-semibold ${props.className} flex items-center justify-center `}
     >
       {props.label}
+      {props.children}
     </button>
   );
 };

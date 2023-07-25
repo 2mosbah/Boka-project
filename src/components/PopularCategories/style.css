@@ -1,0 +1,9 @@
+.popularImage {
+  transition: transform 0.3s ease;
+}
+
+/* Add transition to the display property for arrowDiv */
+.popularImage:hover .arrowDiv {
+  display: flex;
+  transition: display 0.3s ease;
+}
