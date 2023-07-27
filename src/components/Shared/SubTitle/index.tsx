@@ -1,6 +1,5 @@
-import React from "react";
-import { H1 } from "../../Typography";
 import Button from "../Button";
+import { H1 } from "../../Home/Typography";
 import { IPropsSubTitle } from "../../../interfaces/props/IPropsSubTitle";
 
 const SubTitle = (props: IPropsSubTitle) => {

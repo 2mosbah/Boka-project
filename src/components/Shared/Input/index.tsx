@@ -1,4 +1,3 @@
-import React from "react";
 import { IPropsInput } from "../../../interfaces/props/IPropsInput";
 
 const Input = (props: IPropsInput) => {

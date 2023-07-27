@@ -1,13 +1,12 @@
-import Header from "./components/Header";
-import ClassifactionSlider from "./components/Slider";
-import Bannar from "./components/Bannar";
-import TypesCard from "./components/Card";
-import HappyCustomers from "./components/HappyCustomers";
-import Brands from "./components/Brands";
-import PopularCategories from "./components/PopularCategories";
-import Footer from "./components/Footer";
-import BeforeAfter from "./components/BeforeAfter";
-import BeforeAfterSlider from "./components/BeforeAfter";
+import Bannar from "./components/Home/Bannar";
+import BeforeAfter from "./components/Home/BeforeAfter";
+import Brands from "./components/Home/Brands";
+import TypesCard from "./components/Home/Card";
+import Footer from "./components/Home/Footer";
+import HappyCustomers from "./components/Home/HappyCustomers";
+import Header from "./components/Home/Header";
+import PopularCategories from "./components/Home/PopularCategories";
+import ClassifactionSlider from "./components/Home/Slider";
 
 function App() {
   return (
@@ -15,7 +14,7 @@ function App() {
       <Header />
       <ClassifactionSlider />
       <Bannar />
-      <TypesCard />
+      <TypesCard id="a" />
       <HappyCustomers />
       <Brands />
       <PopularCategories />

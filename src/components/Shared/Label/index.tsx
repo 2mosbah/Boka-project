@@ -1,4 +1,3 @@
-import React from "react";
 import { IPropsLabel } from "../../../interfaces/props/IPropsLabel";
 
 const Label = (props: IPropsLabel) => {
