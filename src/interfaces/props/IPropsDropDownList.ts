@@ -1,4 +1,5 @@
 export interface IPropsDropDownList {
   selectClassName: string;
-  options: string[];
+  options?: any[];
+  onChange?: any;
 }

@@ -19,11 +19,19 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
+import classNames from "classnames";
+
 const CardContent = (props: IPropsCard) => {
   const { images, title, price, rating, ...prev } = props;
+  const rate = Math.floor(Number(rating) * 10) / 10;
 
   return (
-    <div className="flex flex-col mb-15 gap-5 hover:scale-105 transition-all duration-300 ease-in-out">
+    <div
+      className={classNames(
+        "flex flex-col mb-15 gap-5 hover:scale-105 transition-all duration-300 ease-in-out",
+        prev.className
+      )}
+    >
       <div className="!max-w-[344px] flex relative imgsDiv">
         <Button
           type="button"
@@ -33,10 +41,9 @@ const CardContent = (props: IPropsCard) => {
           }
         />
         <Swiper
-          className="max-w-[344px] py-2"
+          className="max-w-[344px]"
           modules={[Navigation]}
           slidesPerView={2}
-          spaceBetween={2}
           slidesPerGroupAuto
           navigation={{
             nextEl: `.nextImg${props.id}`,
@@ -44,9 +51,13 @@ const CardContent = (props: IPropsCard) => {
             enabled: true,
           }}
         >
-          {images.map((img, index) => (
+          {images.map((img: any, index) => (
             <SwiperSlide key={index}>
-              <img src={img} alt="haircut" className="w-[176px] h-[172px]" />
+              <img
+                src={img.imageUrl}
+                alt="haircut"
+                className="w-[176px] h-[172px]"
+              />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -62,15 +73,15 @@ const CardContent = (props: IPropsCard) => {
           <BiHeart className="hidden heartBtn bg-white rounded text-3xl shadow p-1 hover:text-orange-600 hover:bg-gray-200" />
         </Button>
       </div>
-      <div className="flex gap-5 items-center !max-w-[344px]">
+      <div className="flex flex-col items-start !max-w-[344px] p-1">
         <SPAN className="font-semibold">{title}</SPAN>
         <SPAN className="flex items-center gap-1">
           <img src={star} alt="star" className="w-[20px] h-[20px]" />
-          {rating}
+          {rate}
         </SPAN>
       </div>
       <div className="!max-w-[344px] flex justify-center items-center text-[#FF914D] p-2 rounded-md border border-[#FF914D]">
-        <Button type="button" label="Busieness" className="" />
+        <Button type="button" label="Busieness" />
       </div>
       <div>
         <Link
@@ -78,14 +89,14 @@ const CardContent = (props: IPropsCard) => {
           className="!max-w-[344px] flex gap-1 items-center text-sm text-[#17505C]"
         >
           <SlLocationPin />
-          <SPAN>Avalaible in Mutliple address, Pick time</SPAN>
+          <SPAN>{prev.address}</SPAN>
         </Link>
       </div>
       <DropdownList
-        selectClassName="!max-w-[344px] w-full bg-[#FFE6D6] font-semibold border focus:outline-none border-[#FF914D] py-2 rounded"
-        options={prev.options}
+        selectClassName="p-1 !max-w-[344px] w-full bg-[#FFE6D6] font-semibold border focus:outline-none border-[#FF914D] py-2 rounded"
+        options={prev.options?.map((option: any) => option.nameEn)}
       />
-      <div className="flex gap-2 !max-w-[344px]">
+      <div className="p-1 flex gap-2 !max-w-[344px]">
         <Swiper
           className="max-w-[344px]"
           modules={[Navigation]}
@@ -109,15 +120,17 @@ const CardContent = (props: IPropsCard) => {
           ))}
         </Swiper>
       </div>
-      <div className="!max-w-[344px] flex justify-between items-center">
+      <div className="p-1 !max-w-[344px] flex justify-between items-center">
         <div>Booked x today</div>
         <div className="flex flex-col items-center justify-center">
-          <div className="line-through text-[#17505C]">{price?.curPrice}</div>
+          <s className="text-[#17505C]">$29.72</s>
           <div className="font-bold flex gap-2">
-            <SPAN>{price?.prevPrice}</SPAN>
-            <SPAN className="bg-red-600 rounded px-1 text-white">
-              {price?.salePercentage}
+            <SPAN>
+              {prev.options?.map((option: any, index) =>
+                index === 0 ? Math.ceil(option.price) : ""
+              )}
             </SPAN>
+            <SPAN className="bg-red-600 rounded px-1 text-white">{"20%"}</SPAN>
           </div>
         </div>
       </div>

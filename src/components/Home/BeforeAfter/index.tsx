@@ -10,7 +10,7 @@ import { FIRST_IMAGE, SECOND_IMAGE } from "../../../constants/BeforeAfter";
 
 const BeforeAfter = () => {
   return (
-    <Container>
+    <Container className="my-20">
       <SubTitle
         heading="Boka Transformation"
         label="Book Now"

@@ -1,10 +1,16 @@
 export interface IPropsCard {
   id?: number;
   title?: string;
-  rating?: string;
-  images: string[];
-  options?: string[] | any;
-  time: {
+  rating?: number | string;
+  images: object[] | any[];
+  options?:
+    | {
+        id: number;
+        nameEn: string;
+        price: string;
+      }[]
+    | string[];
+  time?: {
     id: string;
     time: string;
   }[];
@@ -13,5 +19,7 @@ export interface IPropsCard {
     prevPrice: string;
     salePercentage: string;
   };
-  imgClassName?: string;
+  className?: string;
+  categoryId?: number;
+  address?: any;
 }

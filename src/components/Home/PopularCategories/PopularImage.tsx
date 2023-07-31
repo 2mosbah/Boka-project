@@ -6,9 +6,16 @@ import "../../../styles/globals.css";
 
 import { BsArrowRight } from "react-icons/bs";
 
+import classNames from "classnames";
+
 const PopularImage = (props: IPropsPopularImage) => {
   return (
-    <div className="relative popularImage hover:scale-105">
+    <div
+      className={classNames(
+        "relative popularImage hover:scale-105",
+        props.className
+      )}
+    >
       <img src={props.imgSrc} alt={props.imgSrc} />
       <div className="absolute bottom-4 left-4 text-white flex flex-col">
         <SPAN className="font-semibold text-2xl">{props.name}</SPAN>

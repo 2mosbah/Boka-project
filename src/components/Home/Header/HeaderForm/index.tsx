@@ -37,7 +37,7 @@ const HeaderForm = () => {
               <div className="lg:flex lg:items-center lg:gap-2 lg:align-middle">
                 <Input
                   type="checkbox"
-                  className="mr-2 accent-[#FF914D] w-4 h-4 rounded"
+                  className="mr-[6px] accent-[#FF914D] w-4 h-4 rounded"
                   id="atBusiness"
                 />
                 <Label htmlFor="atBusiness">At Business</Label>

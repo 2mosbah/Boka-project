@@ -1,12 +1,17 @@
+import ExploringBusinessesSection from "./components/Home/ExploringBusinessesSection";
 import Bannar from "./components/Home/Bannar";
 import BeforeAfter from "./components/Home/BeforeAfter";
 import Brands from "./components/Home/Brands";
-import TypesCard from "./components/Home/Card";
+import FeaturedBusinessesSection from "./components/Home/FeaturedBusinessesSection";
 import Footer from "./components/Home/Footer";
+import HairSalonSectoin from "./components/Home/HairSalon'sSectoin";
 import HappyCustomers from "./components/Home/HappyCustomers";
 import Header from "./components/Home/Header";
+import MoreBusinessesSection from "./components/Home/MoreBusinessesSection";
+import PopularBusinessesSection from "./components/Home/PopularBusinessesSection";
 import PopularCategories from "./components/Home/PopularCategories";
 import ClassifactionSlider from "./components/Home/Slider";
+import SpecialOfferSection from "./components/Home/SpecialOfferSection";
 
 function App() {
   return (
@@ -15,16 +20,16 @@ function App() {
       <Header />
       <ClassifactionSlider id={1} />
       <Bannar />
-      <TypesCard id={2234} header={"Special offer"} />
-      <TypesCard id={3412} header={"Featured Businesses"} />
-      <TypesCard id={4123} header={"Popular Businesses"} />
-      <TypesCard id={4513} header={"Hair Salon's"} />
+      <SpecialOfferSection />
+      <FeaturedBusinessesSection />
+      <PopularBusinessesSection />
+      <HairSalonSectoin />
       <BeforeAfter />
       <PopularCategories />
       <HappyCustomers id={5} />
       <Brands />
-      <TypesCard id={4651} header={"Exploring Businesses"} />
-      <TypesCard id={4156} header={"More Businesses"} />
+      <ExploringBusinessesSection />
+      <MoreBusinessesSection />
       <Footer />
     </div>
   );
