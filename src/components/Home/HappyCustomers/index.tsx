@@ -1,45 +1,71 @@
-import star from "../../../assets/star.png";
-import starHalf from "../../../assets/starHalf.svg";
-import avatar from "../../../assets/avatar.png";
-
+import { HappyCustomersData } from "../../../constants/HappyCutomersData";
 import Container from "../../Shared/Conatiner";
-import { Body, H1, SPAN } from "../Typography";
+import { H1 } from "../Typography";
+import HappyCustomersCard from "./HappyCustomersCard";
 
-const HappyCustomers = () => {
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import Button from "../../Shared/Button";
+
+import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs";
+
+const HappyCustomers = ({ id }: { id: number }) => {
   return (
-    <Container>
-      <div className="flex flex-col items-center my-16">
-        <H1 className="font-bold text-2xl">Our happy customers say about us</H1>
-        <div className="flex flex-col md:w-full my-10 gap-5 justify-between bg-[#F9F9F9] p-4">
-          <div>
-            <Body className="text-[#17505C] w-[250px]">
-              “Lorem ipsum dolor sit amet, cons ectetur adipiscing elit, sed do
-              eius mod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam...”
-            </Body>
-          </div>
-          <div className="flex gap-5">
-            <div className="flex gap-1">
-              <img src={star} alt="star" className="w-[20px] h-[20px]" />
-              <img src={star} alt="star" className="w-[20px] h-[20px]" />
-              <img src={star} alt="star" className="w-[20px] h-[20px]" />
-              <img src={star} alt="star" className="w-[20px] h-[20px]" />
-              <img
-                src={starHalf}
-                alt="half star"
-                className="w-[20px] h-[20px]"
+    <Container className="my-20">
+      <H1 className="text-[#02323D] text-[36px] text-center font-bold">
+        Our happy customers say about us
+      </H1>
+      <div className="flex mb-20">
+        <Button
+          type="button"
+          className={`prev${id}`}
+          label={
+            <BsArrowLeftShort className="text-2xl font-thin hover:rounded-full hover:py-1 hover:text-3xl hover:bg-white hover:text-orange-500" />
+          }
+        />
+        <Swiper
+          className="w-full"
+          modules={[Navigation]}
+          slidesPerView={4}
+          spaceBetween={20}
+          navigation={{
+            nextEl: `.next${id}`,
+            prevEl: `.prev${id}`,
+            enabled: true,
+          }}
+          slidesPerGroup={1}
+        >
+          {HappyCustomersData.map((data) => (
+            <SwiperSlide id={data.id} className="!w-[300px] !h-[300px] ">
+              <HappyCustomersCard
+                id={data.id}
+                body={data.body}
+                logo={data.logo}
+                name={data.name}
+                authorName={data.authorName}
+                location={data.location}
+                stars={data.stars}
               />
-            </div>
-            <SPAN className="text-[#17505C]">- Jack Daniels</SPAN>
-          </div>
-          <div className="flex justify-start gap-2 w-full">
-            <img src={avatar} alt="avatar" className="h-[45px] w-[45px]" />
-            <div className="flex flex-col">
-              <SPAN className="font-bold">Anup Kanti Deb</SPAN>
-              <SPAN className="text-[#6B7C80]">Sylhet, Bangladesh</SPAN>
-            </div>
-          </div>
-        </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <Button
+          type="button"
+          className={`next${id}`}
+          label={
+            <BsArrowRightShort className="text-2xl font-thin hover:rounded-full hover:py-1 hover:text-3xl hover:bg-white hover:text-orange-500" />
+          }
+        />
       </div>
     </Container>
   );

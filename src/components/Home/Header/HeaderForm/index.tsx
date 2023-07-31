@@ -91,13 +91,13 @@ const HeaderForm = () => {
       </form>
       <div className="text-white flex flex-col items-center lg:flex-row lg:gap-2 lg:justify-center">
         <Body>It looks like you're in PS. Not correct?</Body>
-        <div className="flex space-x-2 hover:font-bold">
+        <div className="flex space-x-2">
           <Button
-            className="text-lg text-[#FF914D] "
+            className="text-lg text-[#FF914D]"
             type="button"
             label={<SlLocationPin />}
           />
-          <Link to={"#"} className="text-[#FF914D]">
+          <Link to={"#"} className="text-[#FF914D] hover:text-orange-700">
             Get current location
           </Link>
         </div>

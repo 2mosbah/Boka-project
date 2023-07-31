@@ -6,18 +6,12 @@ import walmart from "../../../assets/walmart.png";
 
 const Brands = () => {
   return (
-    <div className="w-full p-10 gap-5 bg-[#E3ECEE] flex items-center lg:justify-center lg:gap-[40px] justify-around h-[185px] my-20">
-      <div className="flex flex-col gap-3 lg:gap-5 lg:flex-row">
-        <img src={walmart} alt="walmart" />
-        <img src={ralphs} alt="ralphs" />
-      </div>
-      <div className="flex flex-col gap-3 lg:gap-5 lg:flex-row">
-        <img src={smartFinal} alt="smartFinal" />
-        <img src={foorless} alt="foorless" />
-      </div>
-      <div className="flex flex-col">
-        <img src={vons} alt="vons" />
-      </div>
+    <div className="grid grid-cols-3 md:grid-cols-5 md:flex md:flex-row md:items-center md:justify-evenly p-2 md:h-[185px] flex-col gap-10 bg-[#E3ECEE] my-20">
+      <img src={walmart} alt="walmart" className="w-25" />
+      <img src={ralphs} alt="ralphs" className="w-25 " />
+      <img src={smartFinal} alt="smartFinal" className="w-25 " />
+      <img src={foorless} alt="foorless" className="w-25 " />
+      <img src={vons} alt="vons" className="w-25 " />
     </div>
   );
 };

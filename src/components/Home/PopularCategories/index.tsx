@@ -10,7 +10,7 @@ import PopularImage from "./PopularImage";
 const PopularCategories = () => {
   return (
     <Container>
-      <div className="flex flex-col lg:flex-row my-24 items-center gap-6">
+      <div className="flex flex-col lg:flex-row my-20 items-center gap-6">
         <PopularImage
           imgSrc={manicure}
           name="Manicure"

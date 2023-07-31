@@ -1,5 +1,5 @@
 export interface IPropsCard {
-  id?: string;
+  id?: number;
   title?: string;
   rating?: string;
   images: string[];

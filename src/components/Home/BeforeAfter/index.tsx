@@ -6,15 +6,8 @@ import SubTitle from "../../Shared/SubTitle";
 import ReactBeforeSliderComponent from "react-before-after-slider-component";
 import "react-before-after-slider-component/dist/build.css";
 import { Body, SPAN } from "../Typography";
+import { FIRST_IMAGE, SECOND_IMAGE } from "../../../constants/BeforeAfter";
 
-const FIRST_IMAGE = {
-  imageUrl:
-    "https://dev.boka.co/_next/image/?url=https%3A%2F%2Fdev-boka-files.s3.amazonaws.com%2FCM%2FCaseStudies%2Ftransformation-after.png&w=1920&q=75",
-};
-const SECOND_IMAGE = {
-  imageUrl:
-    "https://dev.boka.co/_next/image/?url=https%3A%2F%2Fdev-boka-files.s3.amazonaws.com%2FCM%2FCaseStudies%2Ftransformation-before.png&w=1920&q=75",
-};
 const BeforeAfter = () => {
   return (
     <Container>
@@ -23,8 +16,8 @@ const BeforeAfter = () => {
         label="Book Now"
         buttonClassName="border border-[#FF914D] text-[#FF914D] rounded-md px-4 py-2 hover:bg-[#FF914D] hover:text-white"
       />
-      <div className="lg:flex flex">
-        <div className="w-[50%] relative">
+      <div className="md:flex-row flex flex-col gap-10">
+        <div className="md:w-[50%] w-full relative">
           <ReactBeforeSliderComponent
             firstImage={FIRST_IMAGE}
             secondImage={SECOND_IMAGE}
@@ -36,7 +29,7 @@ const BeforeAfter = () => {
             After
           </SPAN>
         </div>
-        <div className="w-[50%] flex justify-center items-center align-middle">
+        <div className="w-full md:w-1/2 flex justify-center items-center align-middle">
           <div className="flex flex-col gap-4 justify-between align-middle">
             <div>
               <Body className="text-[#17505C] w-[250px]">

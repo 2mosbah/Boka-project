@@ -10,15 +10,21 @@ import ClassifactionSlider from "./components/Home/Slider";
 
 function App() {
   return (
+    // className="flex flex-col justify-center items-center"
     <div>
       <Header />
-      <ClassifactionSlider />
+      <ClassifactionSlider id={1} />
       <Bannar />
-      <TypesCard id="a" />
-      <HappyCustomers />
-      <Brands />
-      <PopularCategories />
+      <TypesCard id={2234} header={"Special offer"} />
+      <TypesCard id={3412} header={"Featured Businesses"} />
+      <TypesCard id={4123} header={"Popular Businesses"} />
+      <TypesCard id={4513} header={"Hair Salon's"} />
       <BeforeAfter />
+      <PopularCategories />
+      <HappyCustomers id={5} />
+      <Brands />
+      <TypesCard id={4651} header={"Exploring Businesses"} />
+      <TypesCard id={4156} header={"More Businesses"} />
       <Footer />
     </div>
   );

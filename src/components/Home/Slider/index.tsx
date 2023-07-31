@@ -16,13 +16,13 @@ import "swiper/css/scrollbar";
 
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
-const ClassifactionSlider = () => {
+const ClassifactionSlider = ({ id }: { id: number }) => {
   return (
     <Container>
       <div className="flex my-20 ">
         <Button
           type="button"
-          className="prev text-2xl"
+          className={`prev${id} text-2xl`}
           label={<IoIosArrowBack className="text-4xl" />}
         />
         <Swiper
@@ -30,8 +30,8 @@ const ClassifactionSlider = () => {
           slidesPerView={8}
           spaceBetween={20}
           navigation={{
-            nextEl: ".next",
-            prevEl: ".prev",
+            nextEl: `.next${id}`,
+            prevEl: `.prev${id}`,
             enabled: true,
           }}
           slidesPerGroup={1}
@@ -68,7 +68,10 @@ const ClassifactionSlider = () => {
         >
           {ClassifactionData.map((classify) => {
             return (
-              <SwiperSlide className="!flex flex-col gap-4 justify-center items-center">
+              <SwiperSlide
+                id={classify.id}
+                className="!flex flex-col gap-4 justify-center items-center"
+              >
                 <img src={classify.src} alt="SliderImg" />
                 <Button
                   type="button"
@@ -82,7 +85,7 @@ const ClassifactionSlider = () => {
 
         <Button
           type="button"
-          className="next text-2xl"
+          className={`next${id} text-2xl`}
           label={<IoIosArrowForward className="text-4xl" />}
         />
       </div>

@@ -7,7 +7,7 @@ import { IPropsCard } from "../interfaces/props/IPropsCard";
 
 export const CardContents: IPropsCard[] = [
   {
-    id: "1",
+    id: 1,
     title: "Hair X Pression Un Hair Salons",
     rating: "4.5",
     images: [cleaners1, cleaners2, cleaners3, cleaners4],
@@ -27,7 +27,7 @@ export const CardContents: IPropsCard[] = [
     },
   },
   {
-    id: "2",
+    id: 2,
     title: "Hair X Pression Un Hair Salons",
     rating: "4.5",
     images: [cleaners1, cleaners2, cleaners3, cleaners4],
@@ -47,7 +47,7 @@ export const CardContents: IPropsCard[] = [
     },
   },
   {
-    id: "3",
+    id: 3,
     title: "Hair X Pression Un Hair Salons",
     rating: "4.5",
     images: [cleaners1, cleaners2, cleaners3, cleaners4],
@@ -67,7 +67,7 @@ export const CardContents: IPropsCard[] = [
     },
   },
   {
-    id: "4",
+    id: 4,
     title: "Hair X Pression Un Hair Salons",
     rating: "4.5",
     images: [cleaners1, cleaners2, cleaners3, cleaners4],
@@ -87,7 +87,7 @@ export const CardContents: IPropsCard[] = [
     },
   },
   {
-    id: "5",
+    id: 5,
     title: "Hair X Pression Un Hair Salons",
     rating: "4.5",
     images: [cleaners1, cleaners2, cleaners3, cleaners4],
@@ -107,7 +107,7 @@ export const CardContents: IPropsCard[] = [
     },
   },
   {
-    id: "6",
+    id: 6,
     title: "Hair X Pression Un Hair Salons",
     rating: "4.5",
     images: [cleaners1, cleaners2, cleaners3, cleaners4],
@@ -127,7 +127,7 @@ export const CardContents: IPropsCard[] = [
     },
   },
   {
-    id: "7",
+    id: 7,
     title: "Hair X Pression Un Hair Salons",
     rating: "4.5",
     images: [cleaners1, cleaners2, cleaners3, cleaners4],
